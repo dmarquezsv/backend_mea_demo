@@ -7,6 +7,7 @@ package com.mined.sistema.backend.service.User;
 //Importación de paquetes
 import com.mined.sistema.backend.repository.User.UserRepository;
 import com.mined.sistema.backend.model.User.User;
+import java.util.List;
 
 //Importación de Java
 import org.springframework.stereotype.Service;
@@ -26,6 +27,11 @@ public class UserService {
     //Constructor para inicializar el servicio con el repositorio
     public UserService(UserRepository userRepository){
      this.userRepository = userRepository;
+    }
+    
+    //Obtener todos los usuarios
+    public List<User> getAllUsers(){
+    return userRepository.findAll();
     }
     
     //Buscar un usuario por ID

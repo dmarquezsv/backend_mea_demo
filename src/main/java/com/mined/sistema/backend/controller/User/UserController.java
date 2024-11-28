@@ -12,6 +12,7 @@ import java.util.Optional;
 //Importación de paquete
 import com.mined.sistema.backend.service.User.UserService;
 import com.mined.sistema.backend.model.User.User;
+import java.util.List;
 
 /**
  *
@@ -30,6 +31,12 @@ public class UserController {
    //Constructor para inicializar el servicio con el repositorio
     public UserController(UserService userService) {
         this.userService = userService;
+    }
+    
+    //Obtener todos los usuarios
+    @GetMapping
+    public List<User> getAllUsers(){
+       return  userService.getAllUsers();
     }
     
     //Endpoint para buscar un usuario por ID
